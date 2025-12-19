@@ -83,3 +83,13 @@ saveToDatabase($comment);
 // Later rendered directly
 echo "<div>$comment</div>";
 ```
+
+✅ Fixed code no longer vulnerable to reflected xss
+
+```php
+$comment = $_POST['comment'];
+saveToDatabase($comment);
+
+// Encode on output
+echo "<div>" . htmlspecialchars($comment, ENT_QUOTES, 'UTF-8') . "</div>";
+```
