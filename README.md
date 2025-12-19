@@ -104,3 +104,14 @@ echo "<div>" . htmlspecialchars($comment, ENT_QUOTES, 'UTF-8') . "</div>";
   document.getElementById("output").innerHTML = input;
 </script>
 ```
+
+✅ Fixed code no longer vulnerable to DOM-Based XSS
+
+```javascript
+<div id="output"></div>
+
+<script>
+  const input = location.hash.substring(1);
+  document.getElementById("output").textContent = input;
+</script>
+```
