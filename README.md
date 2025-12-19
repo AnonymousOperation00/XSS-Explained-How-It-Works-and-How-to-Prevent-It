@@ -71,6 +71,8 @@ $name = $_GET['name'] ?? '';
 echo "<p>Hello " . htmlspecialchars($name, ENT_QUOTES, 'UTF-8') . "</p>";
 ```
 
+
+
 ❌ Stored XSS vulnerability example
 
 ```php
