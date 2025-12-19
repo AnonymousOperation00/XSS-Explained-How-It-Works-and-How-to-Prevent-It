@@ -125,5 +125,7 @@ echo "<div>" . htmlspecialchars($comment, ENT_QUOTES, 'UTF-8') . "</div>";
 I create free educational content about web security and ethical hacking.  
 If this repository helped you, you can support me via PayPal:
 
-👉 https://www.paypal.me/Anonymousguy101010
+https://www.paypal.me/Anonymousguy101010
+
+Thanks ❤️
 
