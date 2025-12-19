@@ -53,3 +53,10 @@ or `htmlentities()` should be applied before rendering data in HTML contexts.
 
 XSS prevention should always be based on context-aware output encoding rather
 than relying solely on input filtering.
+
+```php
+<?php
+// User input is reflected directly into the HTML response
+$name = $_GET['name'] ?? '';
+echo "<p>Hello $name</p>";
+```
