@@ -63,7 +63,7 @@ $name = $_GET['name'] ?? '';
 echo "<p>Hello $name</p>";
 ```
 
-✅ Fixed code no longer vulnerable to reflected xss
+✅ Fixed code no longer vulnerable to Reflected XSS
 
 ```php
 <?php
@@ -84,7 +84,7 @@ saveToDatabase($comment);
 echo "<div>$comment</div>";
 ```
 
-✅ Fixed code no longer vulnerable to reflected xss
+✅ Fixed code no longer vulnerable to Stored XSS
 
 ```php
 $comment = $_POST['comment'];
@@ -92,4 +92,15 @@ saveToDatabase($comment);
 
 // Encode on output
 echo "<div>" . htmlspecialchars($comment, ENT_QUOTES, 'UTF-8') . "</div>";
+```
+
+❌ DOM-based XSS example
+
+```javascript
+<div id="output"></div>
+
+<script>
+  const input = location.hash.substring(1);
+  document.getElementById("output").innerHTML = input;
+</script>
 ```
